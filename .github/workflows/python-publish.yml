@@ -43,8 +43,16 @@ jobs:
       - name: Run script
         run: python ${{ github.workspace }}/IPTV.py
      
-      - name: Push
-        run: git push -f main Files
+      - name: commit
+        run: |
+          git config --global user.email 3196@qq.com
+          git config --global user.name nd0000t
+          git add .
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
