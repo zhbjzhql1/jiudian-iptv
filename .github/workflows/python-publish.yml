@@ -8,7 +8,9 @@ on:
         cron: "0 16 * * *"
     branches:
       - main
-
+env:
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  
 jobs:
   build:
     runs-on: ubuntu-latest
