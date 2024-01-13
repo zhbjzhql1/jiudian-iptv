@@ -44,7 +44,7 @@ jobs:
         run: python ${{ github.workspace }}/IPTV.py
      
       - name: Push
-        run: git push -f origin Files
+        run: git push -f main Files
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
