@@ -42,7 +42,10 @@ jobs:
           sudo chmod +x /usr/local/bin/chromedriver
       - name: Run script
         run: python ${{ github.workspace }}/IPTV.py
-
+     
+      - name: Push
+        run: git push -f origin Files
+      
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
