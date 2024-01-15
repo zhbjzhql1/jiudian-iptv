@@ -7,7 +7,8 @@ import re
 
 shaanxi = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iU2hhYW54aSI%3D"    #陕西
 hunan = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0i5rmW5Y2XIg%3D%3D"    #湖南
-henan = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgcmVnaW9uPSJIZW5hbiI%3D"
+henan = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgcmVnaW9uPSJIZW5hbiI%3D"     #河南
+jiangshu = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgcmVnaW9uPSJKaWFuZ3N1Ig%3D%3D"    #江苏
 
 def process_url(url):
     # 创建一个Chrome WebDriver实例
@@ -106,3 +107,6 @@ save_results(results_hunan, "hunan.txt")
 
 results_hunan = process_url(henan)
 save_results(results_hunan, "henan.txt")
+
+results_hunan = process_url(jiangshu)
+save_results(results_hunan, "jiangshu.txt")
