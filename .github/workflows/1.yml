@@ -19,10 +19,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
     
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -31,6 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: pip install selenium requests
+        
       - name: Run script
         run: python ${{ github.workspace }}/spider-iptv.py
      
