@@ -30,7 +30,7 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install selenium requests
+        run: pip install selenium requests typing_extensions
 
       - name: Install Chrome WebDriver
         run: |
