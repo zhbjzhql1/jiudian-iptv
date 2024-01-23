@@ -1,0 +1,47 @@
+name: IPTV
+
+on:
+  push:
+    schedule:
+      - name: daily_task
+        description: Run task every day at 4:00 PM
+        cron: "0 0 0 * * ? *"
+    branches:
+      - main
+env:
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+    
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install selenium requests
+      - name: Run script
+        run: python ${{ github.workspace }}/IPTV.py
+     
+      - name: commit
+        run: |
+          git config --global user.email zhbjzhql@qq.com
+          git config --global user.name zhbjzhql1
+          git add .
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
