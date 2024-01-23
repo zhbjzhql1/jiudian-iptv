@@ -1,4 +1,4 @@
-name: IPTV
+name: spider-iptv
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: pip install selenium requests
       - name: Run script
-        run: python ${{ github.workspace }}/IPTV.py
+        run: python ${{ github.workspace }}/spider-iptv.py
      
       - name: commit
         run: |
