@@ -30,7 +30,7 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install mysql selenium requests typing_extensions m3u8 mysql
+        run: pip install mysql selenium requests typing_extensions m3u8 pooling
 
       - name: Install Chrome WebDriver
         run: |
