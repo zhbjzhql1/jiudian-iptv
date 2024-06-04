@@ -5,7 +5,8 @@ on:
     schedule:
       - name: daily_task
         description: Run task every day at 4:00 PM
-        cron: "0 0 2 * * *"
+        cron: "0 0 * * *"
+        
     branches:
       - main
 env:
